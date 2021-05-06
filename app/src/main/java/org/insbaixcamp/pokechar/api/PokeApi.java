@@ -25,7 +25,6 @@ public class PokeApi {
     public static int offsetSeventhGen = 721;
     public static int limitSeventhGen = 88;
 
-    //TODO: INCORRECTO
     public static int offsetEigthtGen = 809;
     public static int limitEigthtGen = 89;
 
