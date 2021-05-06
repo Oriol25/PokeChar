@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondorotom"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/ibPokedex"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="36dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128"
+        app:srcCompat="@drawable/menupokedex" />
+
+    <ImageButton
+        android:id="@+id/ibBag"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="@+id/ibPokedex"
+        app:layout_constraintTop_toBottomOf="@+id/tvPokedex"
+        app:srcCompat="@drawable/menubackpack" />
+
+    <ImageButton
+        android:id="@+id/ibOptions"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="36dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.151"
+        app:srcCompat="@drawable/menuoptions" />
+
+    <ImageButton
+        android:id="@+id/ibTrivial"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/ibOptions"
+        app:layout_constraintTop_toTopOf="@+id/ibBag"
+        app:srcCompat="@drawable/menutrivial" />
+
+    <TextView
+        android:id="@+id/tvPokedex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/pokedexMenu"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="@+id/ibPokedex"
+        app:layout_constraintStart_toStartOf="@+id/ibPokedex"
+        app:layout_constraintTop_toBottomOf="@+id/ibPokedex" />
+
+    <TextView
+        android:id="@+id/tvBag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="@string/bagMenu"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ibBag"
+        app:layout_constraintStart_toStartOf="@+id/ibBag"
+        app:layout_constraintTop_toBottomOf="@+id/ibBag" />
+
+    <TextView
+        android:id="@+id/tvOptions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="@string/optionsMenu"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ibOptions"
+        app:layout_constraintStart_toStartOf="@+id/ibOptions"
+        app:layout_constraintTop_toBottomOf="@+id/ibOptions" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="@string/trivialMenu"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ibTrivial"
+        app:layout_constraintStart_toStartOf="@+id/ibTrivial"
+        app:layout_constraintTop_toTopOf="@+id/tvBag" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PokedexMenu">
+
+    <Button
+        android:id="@+id/btFirstGen"
+        android:layout_width="100dip"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/gen1"
+        android:fontFamily="@font/roboto_mono"
+        android:text="I"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btSecondGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gen2"
+        android:fontFamily="@font/roboto_mono"
+        android:text="II"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btFirstGen"
+        app:layout_constraintEnd_toStartOf="@+id/btThirdGen"
+        app:layout_constraintStart_toEndOf="@+id/btFirstGen"
+        app:layout_constraintTop_toTopOf="@+id/btFirstGen"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btThirdGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/gen3"
+        android:fontFamily="@font/roboto_mono"
+        android:text="III"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btSecondGen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btSecondGen" />
+
+
+    <Button
+        android:id="@+id/btFourthGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/gen4"
+        android:fontFamily="@font/roboto_mono"
+        android:text="IV"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/btFirstGen"
+        app:layout_constraintTop_toBottomOf="@+id/btFirstGen" />
+
+    <Button
+        android:id="@+id/btFifthGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gen5"
+        android:fontFamily="@font/roboto_mono"
+        android:text="V"
+        android:textColor="@android:color/secondary_text_dark"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/btSecondGen"
+        app:layout_constraintTop_toTopOf="@+id/btFourthGen" />
+
+    <Button
+        android:id="@+id/btSixthGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gen6"
+        android:fontFamily="@font/roboto_mono"
+        android:text="VI"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/btThirdGen"
+        app:layout_constraintTop_toTopOf="@+id/btFifthGen" />
+
+    <Button
+        android:id="@+id/btSeventhGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/gen7"
+        android:fontFamily="@font/roboto_mono"
+        android:text="VII"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/btFourthGen"
+        app:layout_constraintTop_toBottomOf="@+id/btFourthGen" />
+
+    <Button
+        android:id="@+id/btEighthGen"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gen8"
+        android:fontFamily="@font/roboto_mono"
+        android:text="VIII"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/btFifthGen"
+        app:layout_constraintTop_toTopOf="@+id/btSeventhGen" />
+
+    <Button
+        android:id="@+id/btPokedex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POKEDEX"
+        app:layout_constraintStart_toStartOf="@+id/btSixthGen"
+        app:layout_constraintTop_toTopOf="@+id/btEighthGen" />
+</androidx.constraintlayout.widget.ConstraintLayout>

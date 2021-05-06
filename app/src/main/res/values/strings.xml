@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PokeChar</string>
+
+    <!-- Main Activity -->
+    <string name="pokedexMenu">Pokedex</string>
+    <string name="bagMenu">Bag</string>
+    <string name="optionsMenu">Options</string>
+    <string name="trivialMenu">Trivial</string>
+
+</resources>

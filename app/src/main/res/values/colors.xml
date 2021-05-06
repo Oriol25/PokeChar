@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorRed">#e44c44</color>
+
+    <color name="pokemonRed">#0000FF</color>
+    <color name="pokemonBlue">#ff0000</color>
+    <color name="pokemonGold">#FFD700</color>
+    <color name="pokemonSilver">#C0C0C0</color>
+    <color name="pokemonZafiro">#6576B4</color>
+    <color name="pokemonRubi">#9B111E</color>
+    <color name="pokemonPlatinium">#6576B4</color>
+    <color name="pokemonPearl">#EAE0C8</color>
+    <color name="pokemonWhite">#FFFFFF</color>
+    <color name="pokemonBlack">#000000</color>
+    <color name="pokemonX">#0080FF</color>
+    <color name="pokemonY">#FF003C</color>
+    <color name="pokemonSol">#EF8E38</color>
+    <color name="pokemonLuna">#FEFCD7</color>
+    <color name="pokemonSword">#00F7FF</color>
+    <color name="pokemonShield">#FF0077</color>
+
+</resources>
