@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ibOptions.setOnClickListener(this);
         ibTrivial.setOnClickListener(this);
 
+        //Hola Oriol
+
 
     }
 
