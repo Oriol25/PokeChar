@@ -27,8 +27,6 @@ public class PokedexMenu extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokedex_menu);
 
-        //HOLA
-
         btFirst = findViewById(R.id.btFirstGen);
         btSecond = findViewById(R.id.btSecondGen);
         btThird = findViewById(R.id.btThirdGen);
