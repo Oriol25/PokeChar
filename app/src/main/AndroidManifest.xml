@@ -22,6 +22,12 @@
             android:name=".ui.PokedexMenu"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".ui.BolsaMenu"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.Bolsa"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>

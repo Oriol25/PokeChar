@@ -6,5 +6,13 @@
     <string name="bagMenu">Bag</string>
     <string name="optionsMenu">Options</string>
     <string name="trivialMenu">Trivial</string>
+    <string name="pokeball">PokeBall</string>
+    <string name="botiquin">first aid kit</string>
+    <string name="remedioscura">Healing remedies</string>
+    <string name="Objetospoten">Power-up items</string>
+    <string name="Spraypoten">Enhancer spray</string>
+    <string name="ataques">TM I HM</string>
+    <string name="IT">Item</string>
+
 
 </resources>

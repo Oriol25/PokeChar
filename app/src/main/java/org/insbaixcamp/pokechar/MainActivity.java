@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import org.insbaixcamp.pokechar.ui.BolsaMenu;
 import org.insbaixcamp.pokechar.ui.PokedexMenu;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == ibPokedex.getId()) {
             i = new Intent(this, PokedexMenu.class);
         } else if (v.getId() == ibBag.getId()) {
-            i = new Intent(this, PokedexMenu.class);
+            i = new Intent(this, BolsaMenu.class);
         } else if (v.getId() == ibOptions.getId()) {
             i = new Intent(this, PokedexMenu.class);
         } else {
