@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ibTrivial.setOnClickListener(this);
 
         //Hola Jesus GG
+        //ADIOS
     }
 
     @Override
