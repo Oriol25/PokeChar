@@ -13,8 +13,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.insbaixcamp.pokechar.R;
+import org.insbaixcamp.pokechar.api.PokeApi;
 import org.insbaixcamp.pokechar.model.PokedexBasic;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,9 +66,12 @@ public class PokedexData extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         try {
-                            String str =response.getString("name");
+                            String str = response.getString("name");
                             str = str.toUpperCase().charAt(0) + str.substring(1).toLowerCase();
                             tvName.setText(str);
+
+                            Picasso.get().load(posPokemon(urlData)).into(ibFoto);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -83,6 +88,15 @@ public class PokedexData extends AppCompatActivity {
 
         requestQueue.add(jsonObjectRequest);
 
+    }
+
+    public String posPokemon (String str) {
+        str = str.replace(PokeApi.pokedex, "");
+        str = str.replace("/", ".png");
+
+        str = PokeApi.spriteFront + str;
+
+        return str;
     }
 
 }
