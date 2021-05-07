@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -43,7 +44,7 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
         limit = bundle.getInt("limit");
         offset = bundle.getInt("offset");
 
-        urlJSON = PokeApi.pokedex + "limit=" + limit + "&offset=" + offset;
+        urlJSON = PokeApi.pokedexList + "limit=" + limit + "&offset=" + offset;
         cargarJSON();
 
 
@@ -51,11 +52,8 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
 
     public void cargarJSON() {
 
-
-        // Initialize a new RequestQueue instance
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        // Initialize a new JsonObjectRequest instance
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 urlJSON,
@@ -74,7 +72,7 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 response = jsonArray.getJSONObject(i);
                                 urlFoto = posPokemon(response.getString("url"));
-                                pokedexBasics[i] = new PokedexBasic(i, response.getString("name"), urlFoto);
+                                pokedexBasics[i] = new PokedexBasic(i+1, response.getString("name"), response.getString("url"), urlFoto);
 
                             }
 
@@ -94,13 +92,12 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
                 }
         );
 
-        // Add JsonObjectRequest to the RequestQueue
         requestQueue.add(jsonObjectRequest);
 
     }
 
     public String posPokemon (String str) {
-        str = str.replace("https://pokeapi.co/api/v2/pokemon/", "");
+        str = str.replace(PokeApi.pokedex, "");
         str = str.replace("/", ".png");
 
         str = PokeApi.spriteFront + str;
@@ -120,5 +117,10 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
     @Override
     public void onListItemClick(int clickedItemIndex) {
         Log.i(TAG, "Pokemon Selecionado: " + pokedexBasics[clickedItemIndex].getName());
+
+        Intent i = new Intent(this, PokedexData.class);
+        i.putExtra("urlData", pokedexBasics[clickedItemIndex].getUrlData());
+        startActivity(i);
+
     }
 }

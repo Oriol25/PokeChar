@@ -4,11 +4,13 @@ public class PokedexBasic {
 
     private int id;
     private String name;
+    private String urlData;
     private String urlImage;
 
-    public PokedexBasic(int id, String name, String urlImage) {
+    public PokedexBasic(int id, String name, String urlData, String urlImage) {
         this.id = id;
         this.name = name;
+        this.urlData = urlData;
         this.urlImage = urlImage;
     }
 
@@ -26,6 +28,14 @@ public class PokedexBasic {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrlData() {
+        return urlData;
+    }
+
+    public void setUrlData(String urlData) {
+        this.urlData = urlData;
     }
 
     public String getUrlImage() {

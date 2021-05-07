@@ -56,20 +56,30 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.NumberVi
 
     class NumberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tvName;
+        TextView tvId;
         ImageButton ibFoto;
 
         public NumberViewHolder(View itemView) {
             super(itemView);
 
             tvName = itemView.findViewById(R.id.tvNamePokedex);
+            tvId = itemView.findViewById(R.id.tvIdPokedex);
             ibFoto = itemView.findViewById(R.id.ibFotoPokedex);
 
-            itemView.setOnClickListener(this);
+            tvName.setOnClickListener(this);
+            tvId.setOnClickListener(this);
+            ibFoto.setOnClickListener(this);
 
         }
 
         void bind(int listIndex){
-            tvName.setText(pokedexBasics[listIndex].getName());
+
+            String str = pokedexBasics[listIndex].getName();
+
+            str = str.toUpperCase().charAt(0) + str.substring(1).toLowerCase();
+
+            tvName.setText(str);
+            tvId.setText(pokedexBasics[listIndex].getId() + " - ");
             Picasso.get().load(pokedexBasics[listIndex].getUrlImage()).into(ibFoto);
 
 
