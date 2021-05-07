@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BolsaMenu">
+
+    <Button
+        android:id="@+id/btremedios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:text="@string/remedioscura"
+        app:layout_constraintBottom_toBottomOf="@+id/btBotiquin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btBotiquin" />
+
+    <Button
+        android:id="@+id/btPokeball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/pokeball"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btBotiquin"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="@string/botiquin"
+        app:layout_constraintBottom_toBottomOf="@+id/btPokeball"
+        app:layout_constraintEnd_toStartOf="@+id/btremedios"
+        app:layout_constraintStart_toEndOf="@+id/btPokeball"
+        app:layout_constraintTop_toTopOf="@+id/btPokeball" />
+
+    <Button
+        android:id="@+id/btitems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Objetospoten"
+        app:layout_constraintStart_toStartOf="@+id/btremedios"
+        app:layout_constraintTop_toTopOf="@+id/btattack" />
+
+    <Button
+        android:id="@+id/btspray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/Spraypoten"
+        app:layout_constraintStart_toStartOf="@+id/btPokeball"
+        app:layout_constraintTop_toBottomOf="@+id/btPokeball" />
+
+    <Button
+        android:id="@+id/btattack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ataques"
+        app:layout_constraintStart_toStartOf="@+id/btBotiquin"
+        app:layout_constraintTop_toTopOf="@+id/btspray" />
+</androidx.constraintlayout.widget.ConstraintLayout>
