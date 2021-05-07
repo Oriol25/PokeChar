@@ -16,7 +16,7 @@
         android:fontFamily="@font/roboto_mono"
         android:text="Pokemon"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#2E2A2A"
+        android:textColor="#2E2A2B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
