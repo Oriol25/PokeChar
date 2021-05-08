@@ -116,8 +116,6 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        Log.i(TAG, "Pokemon Selecionado: " + pokedexBasics[clickedItemIndex].getName());
-
         Intent i = new Intent(this, PokedexData.class);
         i.putExtra("urlData", pokedexBasics[clickedItemIndex].getUrlData());
         startActivity(i);

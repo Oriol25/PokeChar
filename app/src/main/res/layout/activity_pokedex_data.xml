@@ -22,13 +22,192 @@
 
     <ImageView
         android:id="@+id/ibFotoPokedexData"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="16dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
+        app:layout_constraintVertical_bias="0.565"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNamePokedexData"
+        app:layout_constraintTop_toBottomOf="@+id/tvNamePokedexData" />
+
+    <TextView
+        android:id="@+id/tvHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="HP: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Speed: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tvHP"
+        app:layout_constraintTop_toTopOf="@+id/tvHP" />
+
+    <TextView
+        android:id="@+id/tvAtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Attack: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvHP"
+        app:layout_constraintTop_toBottomOf="@+id/tvHP" />
+
+    <TextView
+        android:id="@+id/tvSAtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Sp Attack: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvSpeed"
+        app:layout_constraintTop_toTopOf="@+id/tvAtt" />
+
+    <TextView
+        android:id="@+id/tvDfn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Defense: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvAtt"
+        app:layout_constraintTop_toBottomOf="@+id/tvAtt" />
+
+    <TextView
+        android:id="@+id/tvSDfn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Sp Defense: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/tvSAtt"
+        app:layout_constraintTop_toTopOf="@+id/tvDfn" />
+
+    <TextView
+        android:id="@+id/tvResHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHP"
+        app:layout_constraintStart_toEndOf="@+id/tvHP"
+        app:layout_constraintTop_toTopOf="@+id/tvHP" />
+
+    <TextView
+        android:id="@+id/tvResSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSpeed"
+        app:layout_constraintStart_toEndOf="@+id/tvSpeed"
+        app:layout_constraintTop_toTopOf="@+id/tvSpeed"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvResAtt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAtt"
+        app:layout_constraintStart_toEndOf="@+id/tvAtt"
+        app:layout_constraintTop_toTopOf="@+id/tvAtt" />
+
+    <TextView
+        android:id="@+id/tvResSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSAtt"
+        app:layout_constraintStart_toEndOf="@+id/tvSAtt"
+        app:layout_constraintTop_toTopOf="@+id/tvSAtt" />
+
+    <TextView
+        android:id="@+id/tvResD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDfn"
+        app:layout_constraintStart_toEndOf="@+id/tvDfn"
+        app:layout_constraintTop_toTopOf="@+id/tvDfn" />
+
+    <TextView
+        android:id="@+id/tvResSD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSDfn"
+        app:layout_constraintStart_toEndOf="@+id/tvSDfn"
+        app:layout_constraintTop_toTopOf="@+id/tvSDfn" />
+
+    <ImageView
+        android:id="@+id/ibEvolution1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/ibEvolution2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/ibEvolution1"
+        app:layout_constraintStart_toEndOf="@+id/ibEvolution1"
+        app:layout_constraintTop_toTopOf="@+id/ibEvolution1"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/ibEvolution3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/ibEvolution2"
+        app:layout_constraintStart_toEndOf="@+id/ibEvolution2"
+        app:layout_constraintTop_toTopOf="@+id/ibEvolution2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ public class PokeApi {
 
     public static String pokedexList = "https://pokeapi.co/api/v2/pokemon?";
     public static String pokedex = "https://pokeapi.co/api/v2/pokemon/";
+    public static String pokedexSpecies = "https://pokeapi.co/api/v2/pokemon-species/";
 
     public static int offsetFirstGen = 0;
     public static int limitFirstGen = 151;
