@@ -2,8 +2,10 @@ package org.insbaixcamp.pokechar.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,11 +24,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PokedexData extends AppCompatActivity {
+public class PokedexData extends AppCompatActivity implements View.OnClickListener {
 
     private String urlPokemon;
     private String urlSpecies;
     private String urlEvolution;
+
+    private String urlFirstEvolution;
+    private String urlSecondEvolution;
+    private String urlThirdEvolution;
 
     private String TAG = "PokeChar/PokedexData";
 
@@ -67,6 +73,10 @@ public class PokedexData extends AppCompatActivity {
         ibEvolution = findViewById(R.id.ibEvolution1);
         ibEvolutionDos = findViewById(R.id.ibEvolution2);
         ibEvolutionTres = findViewById(R.id.ibEvolution3);
+
+        ibEvolution.setOnClickListener(this);
+        ibEvolutionDos.setOnClickListener(this);
+        ibEvolutionTres.setOnClickListener(this);
 
         cargarJSON();
 
@@ -217,21 +227,17 @@ public class PokedexData extends AppCompatActivity {
 
                         JSONObject jsonObject;
 
-                        String primera;
-                        String segunda;
-                        String tercera;
-
                         try {
 
                             jsonObject = response.getJSONObject("chain");
 
-                            primera = jsonObject.getJSONObject("species").getString("url");
-                            segunda = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
-                            tercera = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
+                            urlFirstEvolution = jsonObject.getJSONObject("species").getString("url");
+                            urlSecondEvolution = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
+                            urlThirdEvolution = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
 
-                            Picasso.get().load(posPokemonSpecies(primera)).into(ibEvolution);
-                            Picasso.get().load(posPokemonSpecies(segunda)).into(ibEvolutionDos);
-                            Picasso.get().load(posPokemonSpecies(tercera)).into(ibEvolutionTres);
+                            Picasso.get().load(posPokemonSpecies(urlFirstEvolution)).into(ibEvolution);
+                            Picasso.get().load(posPokemonSpecies(urlSecondEvolution)).into(ibEvolutionDos);
+                            Picasso.get().load(posPokemonSpecies(urlThirdEvolution)).into(ibEvolutionTres);
 
                         } catch (JSONException e) {
                             Log.i(TAG, "ERROR: " + e.getMessage());
@@ -269,4 +275,24 @@ public class PokedexData extends AppCompatActivity {
         return str;
     }
 
+    public String posPokemonSpeciesToPokemon(String str) {
+
+        str = str.replace("-species", "");
+
+        return str;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(this, PokedexData.class);
+        if (v.getId() == ibEvolution.getId()) {
+            i.putExtra("urlData", posPokemonSpeciesToPokemon(urlFirstEvolution));
+        } else if (v.getId() == ibEvolutionDos.getId()) {
+            i.putExtra("urlData", posPokemonSpeciesToPokemon(urlSecondEvolution));
+        } else if (v.getId() == ibEvolutionTres.getId()) {
+            i.putExtra("urlData", posPokemonSpeciesToPokemon(urlThirdEvolution));
+        }
+        startActivity(i);
+
+    }
 }

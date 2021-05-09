@@ -77,16 +77,15 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
                             bolsaBasics = new BolsaBasic[jsonArray.length()];
 
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                response = jsonArray.getJSONObject(i);
-                                urlFoto = posBolsa(response.getString("name"));
-                                bolsaBasics[i] = new BolsaBasic(i, response.getString("name"), response.getString("url"), urlFoto);
+                                urlFoto = posBolsa(jsonArray.getJSONObject(i).getString("name"));
+                                bolsaBasics[i] = new BolsaBasic(i, jsonArray.getJSONObject(i).getString("name"), jsonArray.getJSONObject(i).getString("url"), urlFoto);
 
                             }
 
                             cargarPokedex();
 
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.i(TAG, e.getMessage());
                         }
 
                     }

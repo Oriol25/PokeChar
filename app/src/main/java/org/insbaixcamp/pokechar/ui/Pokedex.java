@@ -65,21 +65,20 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
                         JSONArray jsonArray;
 
                         try {
-                            jsonArray = response.getJSONArray("results");
 
+                            jsonArray = response.getJSONArray("results");
                             pokedexBasics = new PokedexBasic[jsonArray.length()];
 
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                response = jsonArray.getJSONObject(i);
-                                urlFoto = posPokemon(response.getString("url"));
-                                pokedexBasics[i] = new PokedexBasic(i+1, response.getString("name"), response.getString("url"), urlFoto);
+                                urlFoto = posPokemon(jsonArray.getJSONObject(i).getString("url"));
+                                pokedexBasics[i] = new PokedexBasic(i+1, jsonArray.getJSONObject(i).getString("name"), jsonArray.getJSONObject(i).getString("url"), urlFoto);
 
                             }
 
                             cargarPokedex();
 
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.i(TAG, e.getMessage());
                         }
 
                     }
