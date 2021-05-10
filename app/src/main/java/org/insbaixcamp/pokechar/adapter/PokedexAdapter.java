@@ -1,6 +1,7 @@
 package org.insbaixcamp.pokechar.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.NumberVi
     private PokedexBasic[] pokedexBasics;
 
     final private ListItemClickListener mOnClickListener;
+
+    private static String TAG = "PokeChar/PokedexAdapter";
 
     public PokedexAdapter(PokedexBasic[] pokedexBasics, ListItemClickListener listener){
         this.pokedexBasics = pokedexBasics;
@@ -77,6 +80,28 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.NumberVi
             String str = pokedexBasics[listIndex].getName();
 
             str = str.toUpperCase().charAt(0) + str.substring(1).toLowerCase();
+
+            boolean fin = false;
+            int i = 0;
+            String name = "";
+
+//            while (!fin) {
+//
+//                if (!str.equals("Jangmo-o") && !str.equals("Hakamo-o") && !str.equals("Kommo-o")) {
+//                    if (str.charAt(i) != '-' && str.length() != (i)) {
+//                        name = name + str.charAt(i);
+//                        Log.i(TAG, name + " " + str.charAt(i));
+//                    } else {
+//                        fin = true;
+//                    }
+//                } else {
+//                    fin = true;
+//                    name = str;
+//                }
+//
+//                i++;
+//
+//            }
 
             tvName.setText(str);
             tvId.setText(pokedexBasics[listIndex].getId() + " - ");
