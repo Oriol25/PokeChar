@@ -210,4 +210,28 @@
         app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <TextView
+        android:id="@+id/tvTypePrimary"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="124dp"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTypeSecundary"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/roboto_mono"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTypePrimary"
+        app:layout_constraintStart_toEndOf="@+id/tvTypePrimary"
+        app:layout_constraintTop_toTopOf="@+id/tvTypePrimary" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

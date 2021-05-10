@@ -35,6 +35,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     private String urlSecondEvolution;
     private String urlThirdEvolution;
 
+    private String urlTypeP;
+    private String urlTypeS;
+
     private String TAG = "PokeChar/PokedexData";
 
     private TextView tvName;
@@ -45,6 +48,8 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     private TextView tvDef;
     private TextView tvSpDef;
     private TextView tvSpeed;
+    private TextView tvTypeP;
+    private TextView tvTypeS;
 
     private ImageView ibFoto;
     private ImageView ibEvolution;
@@ -64,6 +69,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
         tvName = findViewById(R.id.tvNamePokedexData);
         tvDes = findViewById(R.id.tvDescription);
+
+        tvTypeP = findViewById(R.id.tvTypePrimary);
+        tvTypeS = findViewById(R.id.tvTypeSecundary);
 
         tvAtt = findViewById(R.id.tvResAtt);
         tvSpAtt = findViewById(R.id.tvResSA);
@@ -140,6 +148,21 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
                             }
 
+                            urlTypeP = response.getJSONArray("types").getJSONObject(0).getJSONObject("type").getString("url");
+                            cargarTypeP(urlTypeP);
+
+                            if (urlTypeP.equals("")) {
+
+                            }
+
+                            if (response.getJSONArray("types").length() == 2) {
+                                urlTypeS = response.getJSONArray("types").getJSONObject(1).getJSONObject("type").getString("url");
+                                cargarTypeS(urlTypeS);
+
+                            } else {
+                                tvTypeS.setVisibility(View.GONE);
+                            }
+
                             // CARGAR IMAGEN
                             Picasso.get().load(posPokemon(urlPokemon)).into(ibFoto);
 
@@ -176,8 +199,8 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                         JSONObject jsonEvolves;
                         JSONArray genera;
 
-                        String des = "";
-                        String idioma = "";
+                        String des;
+                        String idioma;
 
                         try {
 
@@ -271,6 +294,97 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
         requestQueue.add(jsonObjectRequest);
 
+    }
+
+    public void cargarTypeP(String url) {
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        JSONArray jsonArray;
+
+                        String type;
+
+                        try {
+
+                            jsonArray = response.getJSONArray("names");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals("es")) {
+                                    type = jsonArray.getJSONObject(i).getString("name");
+                                    tvTypeP.setText(type);
+                                }
+
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(TAG, error.getMessage());
+                    }
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
+
+    }
+
+    public void cargarTypeS(String url) {
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        JSONArray jsonArray;
+                        String type;
+
+                        try {
+
+                            jsonArray = response.getJSONArray("names");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals("es")) {
+                                    type = jsonArray.getJSONObject(i).getString("name");
+                                    tvTypeS.setText(type);
+                                }
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(TAG, error.getMessage());
+                    }
+                }
+        );
+
+        requestQueue.add(jsonObjectRequest);
     }
 
     public String posPokemon (String str) {
