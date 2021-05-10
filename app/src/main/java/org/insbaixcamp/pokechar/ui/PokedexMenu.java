@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.insbaixcamp.pokechar.MainActivity;
 import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.PokeApi;
 
@@ -53,36 +54,33 @@ public class PokedexMenu extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         Intent i = new Intent(this, Pokedex.class);
         if (v.getId() == btFirst.getId()) {
-            i.putExtra("offset", PokeApi.offsetFirstGen);
-            i.putExtra("limit", PokeApi.limitFirstGen);
+            i.putExtra("pokedex", PokeApi.pokedexI);
         } else if (v.getId() == btSecond.getId()) {
-            i.putExtra("offset", PokeApi.offsetSecondGen);
-            i.putExtra("limit", PokeApi.limitSecondGen);
+            i.putExtra("pokedex", PokeApi.pokedexII);
         } else if (v.getId() == btThird.getId()) {
-            i.putExtra("offset", PokeApi.offsetThirdGen);
-            i.putExtra("limit", PokeApi.limitThirdGen);
+            i.putExtra("pokedex", PokeApi.pokedexIII);
         } else if (v.getId() == btFourth.getId()) {
-            i.putExtra("offset", PokeApi.offsetFourthGen);
-            i.putExtra("limit", PokeApi.limitFourthGen);
+            i.putExtra("pokedex", PokeApi.pokedexIV);
         } else if (v.getId() == btFifth.getId()) {
-            i.putExtra("offset", PokeApi.offsetFifthGen);
-            i.putExtra("limit", PokeApi.limitFifthGen);
+            i.putExtra("pokedex", PokeApi.pokedexV);
         } else if (v.getId() == btSixth.getId()) {
-            i.putExtra("offset", PokeApi.offsetSixthGen);
-            i.putExtra("limit", PokeApi.limitSixthGen);
+            i.putExtra("pokedex", PokeApi.pokedexVI);
         } else if (v.getId() == btSeventh.getId()){
-            i.putExtra("offset", PokeApi.offsetSeventhGen);
-            i.putExtra("limit", PokeApi.limitSeventhGen);
+            i.putExtra("pokedex", PokeApi.pokedexVII);
         } else if (v.getId() == btEighth.getId()) {
-            i.putExtra("offset", PokeApi.offsetEigthtGen);
-            i.putExtra("limit", PokeApi.limitEigthtGen);
+            i.putExtra("pokedex", PokeApi.pokedexVIII);
         } else {
-            i.putExtra("offset", PokeApi.offsetPokedexGen);
-            i.putExtra("limit", PokeApi.limitPokedexGen);
+            i.putExtra("pokedex", PokeApi.pokedexAll);
         }
 
         startActivity(i);
 
-
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
 }

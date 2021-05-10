@@ -25,9 +25,6 @@ import org.json.JSONObject;
 
 public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListItemClickListener {
 
-    private int limit;
-    private int offset;
-
     private String urlJSON;
 
     private PokedexBasic[] pokedexBasics;
@@ -41,12 +38,9 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
         setContentView(R.layout.activity_pokedex);
 
         Bundle bundle = getIntent().getExtras();
-        limit = bundle.getInt("limit");
-        offset = bundle.getInt("offset");
+        urlJSON = bundle.getString("pokedex");
 
-        urlJSON = PokeApi.pokedexList + "limit=" + limit + "&offset=" + offset;
         cargarJSON();
-
 
     }
 
@@ -117,7 +111,15 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
     public void onListItemClick(int clickedItemIndex) {
         Intent i = new Intent(this, PokedexData.class);
         i.putExtra("urlData", pokedexBasics[clickedItemIndex].getUrlData());
+        i.putExtra("pokedex", urlJSON);
         startActivity(i);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, PokedexMenu.class);
+        startActivity(i);
+    }
+
 }

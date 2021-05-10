@@ -2,36 +2,20 @@ package org.insbaixcamp.pokechar.api;
 
 public class PokeApi {
 
-    public static String pokedexList = "https://pokeapi.co/api/v2/pokemon?";
     public static String pokedex = "https://pokeapi.co/api/v2/pokemon/";
     public static String pokedexSpecies = "https://pokeapi.co/api/v2/pokemon-species/";
 
-    public static int offsetFirstGen = 0;
-    public static int limitFirstGen = 151;
+    public static String pokedexI = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
+    public static String pokedexII = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=151";
+    public static String pokedexIII = "https://pokeapi.co/api/v2/pokemon?limit=135&offset=251";
+    public static String pokedexIV = "https://pokeapi.co/api/v2/pokemon?limit=107&offset=386";
+    public static String pokedexV = "https://pokeapi.co/api/v2/pokemon?limit=156&offset=493";
+    public static String pokedexVI = "https://pokeapi.co/api/v2/pokemon?limit=72&offset=649";
+    public static String pokedexVII = "https://pokeapi.co/api/v2/pokemon?limit=88&offset=721";
+    public static String pokedexVIII = "https://pokeapi.co/api/v2/pokemon?limit=84&offset=814";
+    public static String pokedexAll = "https://pokeapi.co/api/v2/pokemon?limit=893&offset=0";
 
-    public static int offsetSecondGen = 151;
-    public static int limitSecondGen = 100;
 
-    public static int offsetThirdGen = 251;
-    public static int limitThirdGen = 135;
-
-    public static int offsetFourthGen = 386;
-    public static int limitFourthGen = 107;
-
-    public static int offsetFifthGen = 493;
-    public static int limitFifthGen = 156;
-
-    public static int offsetSixthGen = 649;
-    public static int limitSixthGen = 72;
-
-    public static int offsetSeventhGen = 721;
-    public static int limitSeventhGen = 88;
-
-    public static int offsetEigthtGen = 809;
-    public static int limitEigthtGen = 89;
-
-    public static int offsetPokedexGen = 0;
-    public static int limitPokedexGen = 898;
 
     public static String spriteFront = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 

@@ -50,4 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(i);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
+    }
+
 }
