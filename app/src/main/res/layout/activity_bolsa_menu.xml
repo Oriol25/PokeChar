@@ -4,59 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondomenus"
     tools:context=".ui.BolsaMenu">
 
-    <Button
-        android:id="@+id/btremedios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:text="@string/remedioscura"
-        app:layout_constraintBottom_toBottomOf="@+id/btBotiquin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btBotiquin" />
-
-    <Button
+    <ImageButton
         android:id="@+id/btPokeball"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="60dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/pokeball"
         android:text="@string/pokeball"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/btremedios"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="92dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/revivir"
+        android:text="@string/remedioscura"
+        app:layout_constraintBottom_toBottomOf="@+id/btBotiquin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btBotiquin"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
         android:id="@+id/btBotiquin"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/pocion"
         android:text="@string/botiquin"
         app:layout_constraintBottom_toBottomOf="@+id/btPokeball"
         app:layout_constraintEnd_toStartOf="@+id/btremedios"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toEndOf="@+id/btPokeball"
-        app:layout_constraintTop_toTopOf="@+id/btPokeball" />
+        app:layout_constraintTop_toTopOf="@+id/btPokeball"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btitems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/speed"
         android:text="@string/Objetospoten"
         app:layout_constraintStart_toStartOf="@+id/btremedios"
         app:layout_constraintTop_toTopOf="@+id/btattack" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btspray"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="100dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/antidote"
         android:text="@string/Spraypoten"
         app:layout_constraintStart_toStartOf="@+id/btPokeball"
         app:layout_constraintTop_toBottomOf="@+id/btPokeball" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btattack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/disco"
         android:text="@string/ataques"
         app:layout_constraintStart_toStartOf="@+id/btBotiquin"
         app:layout_constraintTop_toTopOf="@+id/btspray" />
