@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -58,6 +59,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     private ImageView ibEvolutionDos;
     private ImageView ibEvolutionTres;
 
+    private View splash;
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +91,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
         ibEvolutionDos = findViewById(R.id.ibEvolution2);
         ibEvolutionTres = findViewById(R.id.ibEvolution3);
 
+        splash = findViewById(R.id.splashScreen);
+        progressBar = findViewById(R.id.progresBar);
+
         ibEvolution.setOnClickListener(this);
         ibEvolutionDos.setOnClickListener(this);
         ibEvolutionTres.setOnClickListener(this);
@@ -98,6 +105,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     public void cargarJSON() {
         cargarPokemon();
         cargarPokemonSpecies();
+
     }
 
     public void cargarPokemon() {
@@ -367,6 +375,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                         } else if (url.equals(TypeApi.fairy)) {
                             tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fairyColor));
                         }
+
+                        splash.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 
                     }
                 },

@@ -35,12 +35,14 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pokedex);
+        setContentView(R.layout.splash_screen);
 
         Bundle bundle = getIntent().getExtras();
         urlJSON = bundle.getString("pokedex");
 
         cargarJSON();
+
+
 
     }
 
@@ -99,12 +101,18 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
     }
 
     public void cargarPokedex() {
+
+        setContentView(R.layout.activity_pokedex);
+
         RecyclerView rvPokedex = findViewById(R.id.rvPokedex);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvPokedex.setLayoutManager(linearLayoutManager);
         rvPokedex.setHasFixedSize(true);
         PokedexAdapter pokedexAdapter = new PokedexAdapter(pokedexBasics, this);
         rvPokedex.setAdapter(pokedexAdapter);
+
+
+
     }
 
     @Override

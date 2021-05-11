@@ -13,6 +13,9 @@
     <string name="Spraypoten">Enhancer spray</string>
     <string name="ataques">TM I HM</string>
     <string name="IT">Item</string>
+    <string name="nomI">Name:</string>
+    <string name="desI">Description:</string>
+
 
 
 </resources>

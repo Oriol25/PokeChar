@@ -12,7 +12,7 @@ public class TypeApi {
     public static String flyingColor = "#88aced";
 
     public static String poison = "https://pokeapi.co/api/v2/type/4/";
-    public static String poisonColor = "#e008e";
+    public static String poisonColor = "#4E008E";
 
     public static String ground = "https://pokeapi.co/api/v2/type/5/";
     public static String groundColor = "#DEB887";
