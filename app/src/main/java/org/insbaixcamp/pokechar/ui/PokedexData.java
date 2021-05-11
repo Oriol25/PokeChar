@@ -3,6 +3,7 @@ package org.insbaixcamp.pokechar.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.squareup.picasso.Picasso;
 
 import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.PokeApi;
+import org.insbaixcamp.pokechar.api.TypeApi;
 import org.insbaixcamp.pokechar.model.PokedexBasic;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -296,7 +298,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    public void cargarTypeP(String url) {
+    public void cargarTypeP(final String url) {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -328,6 +330,44 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                             e.printStackTrace();
                         }
 
+                        if (url.equals(TypeApi.normal)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.normalColor));
+                        } else if (url.equals(TypeApi.fighting)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fightingColor));
+                        } else if (url.equals(TypeApi.flying)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.flyingColor));
+                        } else if (url.equals(TypeApi.poison)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fightingColor));
+                        } else if (url.equals(TypeApi.ground)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.groundColor));
+                        } else if (url.equals(TypeApi.rock)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.rockColor));
+                        } else if (url.equals(TypeApi.bug)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.bugColor));
+                        } else if (url.equals(TypeApi.ghost)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.ghostColor));
+                        } else if (url.equals(TypeApi.steel)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.steelColor));
+                        } else if (url.equals(TypeApi.fire)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fireColor));
+                        } else if (url.equals(TypeApi.water)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.waterColor));
+                        } else if (url.equals(TypeApi.grass)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.grassColor));
+                        } else if (url.equals(TypeApi.electric)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.electricColor));
+                        } else if (url.equals(TypeApi.psychic)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.psychicColor));
+                        } else if (url.equals(TypeApi.ice)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.iceColor));
+                        } else if (url.equals(TypeApi.dragon)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.dragonColor));
+                        } else if (url.equals(TypeApi.dark)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.darkColor));
+                        } else if (url.equals(TypeApi.fairy)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fairyColor));
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -342,7 +382,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    public void cargarTypeS(String url) {
+    public void cargarTypeS(final String url) {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
@@ -372,6 +412,44 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
 
                         } catch (JSONException e) {
                             e.printStackTrace();
+                        }
+
+                        if (url.equals(TypeApi.normal)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.normalColor));
+                        } else if (url.equals(TypeApi.fighting)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.fightingColor));
+                        } else if (url.equals(TypeApi.flying)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.flyingColor));
+                        } else if (url.equals(TypeApi.poison)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.poisonColor));
+                        } else if (url.equals(TypeApi.ground)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.groundColor));
+                        } else if (url.equals(TypeApi.rock)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.rockColor));
+                        } else if (url.equals(TypeApi.bug)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.bugColor));
+                        } else if (url.equals(TypeApi.ghost)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.ghostColor));
+                        } else if (url.equals(TypeApi.steel)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.steelColor));
+                        } else if (url.equals(TypeApi.fire)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.fireColor));
+                        } else if (url.equals(TypeApi.water)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.waterColor));
+                        } else if (url.equals(TypeApi.grass)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.grassColor));
+                        } else if (url.equals(TypeApi.electric)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.electricColor));
+                        } else if (url.equals(TypeApi.psychic)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.psychicColor));
+                        } else if (url.equals(TypeApi.ice)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.iceColor));
+                        } else if (url.equals(TypeApi.dragon)) {
+                            tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.dragonColor));
+                        } else if (url.equals(TypeApi.dark)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.darkColor));
+                        } else if (url.equals(TypeApi.fairy)) {
+                            tvTypeS.setBackgroundColor(Color.parseColor(TypeApi.fairyColor));
                         }
 
                     }
