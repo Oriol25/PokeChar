@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 
 import org.insbaixcamp.pokechar.ui.BolsaMenu;
 import org.insbaixcamp.pokechar.ui.PokedexMenu;
@@ -15,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ImageButton ibPokedex;
     private ImageButton ibBag;
-    private ImageButton ibOptions;
     private ImageButton ibTrivial;
 
     @Override
@@ -25,12 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ibPokedex = findViewById(R.id.ibPokedex);
         ibBag = findViewById(R.id.ibBag);
-        ibOptions = findViewById(R.id.ibOptions);
         ibTrivial = findViewById(R.id.ibTrivial);
 
         ibPokedex.setOnClickListener(this);
         ibBag.setOnClickListener(this);
-        ibOptions.setOnClickListener(this);
         ibTrivial.setOnClickListener(this);
 
     }
@@ -42,9 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i = new Intent(this, PokedexMenu.class);
         } else if (v.getId() == ibBag.getId()) {
             i = new Intent(this, BolsaMenu.class);
-        } else if (v.getId() == ibOptions.getId()) {
-            i = new Intent(this, PokedexMenu.class);
-        } else {
+        }  else {
             i = new Intent(this, PokedexMenu.class);
         }
 

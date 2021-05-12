@@ -50,6 +50,18 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
+        android:id="@+id/btspray"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/antidote"
+        android:text="@string/Spraypoten"
+        app:layout_constraintStart_toStartOf="@+id/btPokeball"
+        app:layout_constraintTop_toBottomOf="@+id/btPokeball" />
+
+    <ImageButton
         android:id="@+id/btitems"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -59,18 +71,6 @@
         android:text="@string/Objetospoten"
         app:layout_constraintStart_toStartOf="@+id/btremedios"
         app:layout_constraintTop_toTopOf="@+id/btattack" />
-
-    <ImageButton
-        android:id="@+id/btspray"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        android:src="@drawable/antidote"
-        android:text="@string/Spraypoten"
-        app:layout_constraintStart_toStartOf="@+id/btPokeball"
-        app:layout_constraintTop_toBottomOf="@+id/btPokeball" />
 
     <ImageButton
         android:id="@+id/btattack"

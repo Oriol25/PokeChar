@@ -22,6 +22,7 @@ import com.squareup.picasso.Picasso;
 import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.PokeApi;
 import org.insbaixcamp.pokechar.api.TypeApi;
+import org.insbaixcamp.pokechar.conf.Language;
 import org.insbaixcamp.pokechar.model.PokedexBasic;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -220,7 +221,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                                 des = genera.getJSONObject(i).getString("genus");
                                 idioma = genera.getJSONObject(i).getJSONObject("language").getString("name");
 
-                                if (idioma.equals("es")) {
+                                if (idioma.equals(Language.language())) {
                                     tvDes.setText(des);
                                 }
                             }
@@ -327,7 +328,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                             jsonArray = response.getJSONArray("names");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals("es")) {
+                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals(Language.language())) {
                                     type = jsonArray.getJSONObject(i).getString("name");
                                     tvTypeP.setText(type);
                                 }
@@ -413,7 +414,7 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                             jsonArray = response.getJSONArray("names");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals("es")) {
+                                if (jsonArray.getJSONObject(i).getJSONObject("language").getString("name").equals(Language.language())) {
                                     type = jsonArray.getJSONObject(i).getString("name");
                                     tvTypeS.setText(type);
                                 }

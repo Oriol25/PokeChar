@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.BolsaApi;
@@ -13,12 +14,12 @@ import org.insbaixcamp.pokechar.api.PokeApi;
 
 public class BolsaMenu extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btPokeball;
-    private Button btBotiquin;
-    private Button btremedios;
-    private Button btspray;
-    private Button btattack;
-    private Button btitems;
+    private ImageButton btPokeball;
+    private ImageButton btBotiquin;
+    private ImageButton btremedios;
+    private ImageButton btspray;
+    private ImageButton btattack;
+    private ImageButton btitems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

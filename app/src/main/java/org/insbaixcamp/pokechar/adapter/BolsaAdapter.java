@@ -71,19 +71,15 @@ public class BolsaAdapter extends RecyclerView.Adapter<BolsaAdapter.NumberViewHo
         }
 
         void bind(int listIndex){
-            nItem.setText(bolsaBasics[listIndex].getName());
-            Log.i("TAG", bolsaBasics[listIndex].getUrlImage());
+            String name = bolsaBasics[listIndex].getName().toUpperCase().charAt(0) + bolsaBasics[listIndex].getName().substring(1).toLowerCase();
+            nItem.setText(name);
             Picasso.get().load(bolsaBasics[listIndex].getUrlImage()).into(imagenItem);
-
-
         }
 
         @Override
         public void onClick(View view) {
             int clickedPosition = getAdapterPosition();
             mOnClickListener.onListItemClick(clickedPosition);
-
-
         }
     }
 }

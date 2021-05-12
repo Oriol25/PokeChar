@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -33,8 +34,6 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
     private String urlFoto;
 
     private String urlJSON;
-
-
 
     private String TAG = "PokeChar/Bolsa";
 
@@ -71,18 +70,23 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
                         JSONArray jsonArray;
 
+                        String name;
+                        String urlD;
+
                         try {
                             jsonArray = response.getJSONArray("results");
 
                             bolsaBasics = new BolsaBasic[jsonArray.length()];
 
                             for (int i = 0; i < jsonArray.length(); i++) {
+                                name = jsonArray.getJSONObject(i).getString("name");
+                                urlD = jsonArray.getJSONObject(i).getString("url");
                                 urlFoto = posBolsa(jsonArray.getJSONObject(i).getString("name"));
-                                bolsaBasics[i] = new BolsaBasic(i, jsonArray.getJSONObject(i).getString("name"), jsonArray.getJSONObject(i).getString("url"), urlFoto);
+                                bolsaBasics[i] = new BolsaBasic(i, name, urlD, urlFoto);
 
                             }
 
-                            cargarPokedex();
+                            cargarBolsa();
 
                         } catch (JSONException e) {
                             Log.i(TAG, e.getMessage());
@@ -110,7 +114,7 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
         return name;
     }
 
-    public void cargarPokedex() {
+    public void cargarBolsa() {
         RecyclerView rvBolsa = findViewById(R.id.rvBolsa);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvBolsa.setLayoutManager(linearLayoutManager);
@@ -121,7 +125,10 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-        Log.i(TAG, "Item Selecionado: " + bolsaBasics[clickedItemIndex].getName());
+            Intent i = new Intent(this, BolsaData.class);
+            i.putExtra("urlData", bolsaBasics[clickedItemIndex].getUrlData());
+            startActivity(i);
+
     }
 
 }
