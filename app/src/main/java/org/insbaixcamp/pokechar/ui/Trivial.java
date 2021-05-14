@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,6 +20,7 @@ import com.squareup.picasso.Picasso;
 
 import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.PokeApi;
+import org.insbaixcamp.pokechar.conf.Score;
 import org.insbaixcamp.pokechar.model.PokedexBasic;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,10 +39,13 @@ public class Trivial extends AppCompatActivity implements View.OnClickListener {
     Button btop3;
     Button btNext;
 
+    TextView tvScore;
+
     PokedexBasic[] pokedexBasic;
     PokedexBasic[] pokemon = new PokedexBasic[3];
 
     private String TAG = "PokeChar/Trivial";
+    private String scoreText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,10 @@ public class Trivial extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_trivial);
 
         ivPokemon = findViewById(R.id.ivPokemon);
+
+        tvScore = findViewById(R.id.tvScore);
+        scoreText = getString(R.string.score) + " " + Score.score;
+        tvScore.setText(scoreText);
 
         btop1 = findViewById(R.id.btOpUno);
         btop2 = findViewById(R.id.btOpDos);
@@ -156,47 +165,78 @@ public class Trivial extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == btop1.getId()) {
-            if (btop1.getText() == pokemon[0].getName()) {
-                btop1.setBackgroundResource(quizcorrect);
-            } else {
-                btop1.setBackgroundResource(quizincorrect);
+        boolean boolControl = false;
+
+            if (v.getId() == btop1.getId()) {
+                if (btop1.getText() == pokemon[0].getName()) {
+                    btop1.setBackgroundResource(quizcorrect);
+                    Score.score += 1000;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
+                } else {
+                    btop1.setBackgroundResource(quizincorrect);
+                    if (btop2.getText() == pokemon[0].getName()) {
+                        btop2.setBackgroundResource(quizcorrect);
+                    } else if (btop3.getText() == pokemon[0].getName()) {
+                        btop3.setBackgroundResource(quizcorrect);
+                    }
+                    Score.score = 0;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
+                }
+                btNext.setVisibility(View.VISIBLE);
+                btop1.setClickable(false);
+                btop2.setClickable(false);
+                btop3.setClickable(false);
+            } else if (v.getId() == btop2.getId()) {
                 if (btop2.getText() == pokemon[0].getName()) {
                     btop2.setBackgroundResource(quizcorrect);
-                } else if (btop3.getText() == pokemon[0].getName()) {
+                    Score.score += 1000;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
+                } else {
+                    btop2.setBackgroundResource(quizincorrect);
+                    if (btop1.getText() == pokemon[0].getName()) {
+                        btop1.setBackgroundResource(quizcorrect);
+                    } else if (btop3.getText() == pokemon[0].getName()) {
+                        btop3.setBackgroundResource(quizcorrect);
+                    }
+                    Score.score = 0;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
+                }
+                btNext.setVisibility(View.VISIBLE);
+                btop1.setClickable(false);
+                btop2.setClickable(false);
+                btop3.setClickable(false);
+            } else if (v.getId() == btop3.getId()) {
+                if (btop3.getText() == pokemon[0].getName()) {
                     btop3.setBackgroundResource(quizcorrect);
+                    Score.score += 1000;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
+                } else {
+                    btop3.setBackgroundResource(quizincorrect);
+                    if (btop1.getText() == pokemon[0].getName()) {
+                        btop1.setBackgroundResource(quizcorrect);
+                    } else if (btop2.getText() == pokemon[0].getName()) {
+                        btop2.setBackgroundResource(quizcorrect);
+                    }
+                    Score.score = 0;
+                    scoreText = getString(R.string.score) + " " + Score.score;
+                    tvScore.setText(scoreText);
                 }
+                btNext.setVisibility(View.VISIBLE);
+                btop1.setClickable(false);
+                btop2.setClickable(false);
+                btop3.setClickable(false);
             }
-            btNext.setVisibility(View.VISIBLE);
-        } else if (v.getId() == btop2.getId()) {
-            if (btop2.getText() == pokemon[0].getName()) {
-                btop2.setBackgroundResource(quizcorrect);
-            } else {
-                btop2.setBackgroundResource(quizincorrect);
-                if (btop1.getText() == pokemon[0].getName()) {
-                    btop1.setBackgroundResource(quizcorrect);
-                } else if (btop3.getText() == pokemon[0].getName()) {
-                    btop3.setBackgroundResource(quizcorrect);
-                }
-            }
-            btNext.setVisibility(View.VISIBLE);
-        } else if (v.getId() == btop3.getId()) {
-            if (btop3.getText() == pokemon[0].getName()) {
-                btop3.setBackgroundResource(quizcorrect);
-            } else {
-                btop3.setBackgroundResource(quizincorrect);
-                if (btop1.getText() == pokemon[0].getName()) {
-                    btop1.setBackgroundResource(quizcorrect);
-                } else if (btop2.getText() == pokemon[0].getName()) {
-                    btop2.setBackgroundResource(quizcorrect);
-                }
-            }
-            btNext.setVisibility(View.VISIBLE);
-        } else if (v.getId() == btNext.getId()) {
+
+        if (v.getId() == btNext.getId()) {
+            btop1.setClickable(true);
+            btop2.setClickable(true);
+            btop3.setClickable(true);
             mostrarQuiz();
         }
-
-
-
     }
 }
