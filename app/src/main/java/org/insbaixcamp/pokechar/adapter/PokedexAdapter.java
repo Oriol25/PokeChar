@@ -81,8 +81,8 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.NumberVi
 
             str = str.toUpperCase().charAt(0) + str.substring(1).toLowerCase();
 
-            boolean fin = false;
-            int i = 0;
+            //boolean fin = false;
+            //int i = 0;
             String name = "";
 
 //            while (!fin) {
@@ -106,16 +106,12 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.NumberVi
             tvName.setText(str);
             tvId.setText(pokedexBasics[listIndex].getId() + " - ");
             Picasso.get().load(pokedexBasics[listIndex].getUrlImage()).into(ibFoto);
-
-
         }
 
         @Override
         public void onClick(View view) {
             int clickedPosition = getAdapterPosition();
             mOnClickListener.onListItemClick(clickedPosition);
-
-
         }
     }
 }

@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/btFirstGen"
-        android:layout_width="100dip"
-        android:layout_height="0dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/gen1"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/g1"
         android:fontFamily="@font/roboto_mono"
         android:text="I"
         android:textColor="#FFFFFF"
@@ -24,8 +24,8 @@
     <Button
         android:id="@+id/btSecondGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gen2"
+        android:layout_height="50dp"
+        android:background="@drawable/g2"
         android:fontFamily="@font/roboto_mono"
         android:text="II"
         android:textColor="#FFFFFF"
@@ -38,10 +38,10 @@
 
     <Button
         android:id="@+id/btThirdGen"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="100dp"
-        android:background="@drawable/gen3"
+        android:background="@drawable/g3"
         android:fontFamily="@font/roboto_mono"
         android:text="III"
         android:textColor="#FFFFFF"
@@ -54,9 +54,9 @@
     <Button
         android:id="@+id/btFourthGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/gen4"
+        android:background="@drawable/g4"
         android:fontFamily="@font/roboto_mono"
         android:text="IV"
         android:textColor="#FFFFFF"
@@ -67,8 +67,8 @@
     <Button
         android:id="@+id/btFifthGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gen5"
+        android:layout_height="50dp"
+        android:background="@drawable/g5"
         android:fontFamily="@font/roboto_mono"
         android:text="V"
         android:textColor="@android:color/secondary_text_dark"
@@ -79,8 +79,8 @@
     <Button
         android:id="@+id/btSixthGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gen6"
+        android:layout_height="50dp"
+        android:background="@drawable/g6"
         android:fontFamily="@font/roboto_mono"
         android:text="VI"
         android:textColor="#FFFFFF"
@@ -91,9 +91,9 @@
     <Button
         android:id="@+id/btSeventhGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/gen7"
+        android:background="@drawable/g7"
         android:fontFamily="@font/roboto_mono"
         android:text="VII"
         android:textColor="#FFFFFF"
@@ -104,8 +104,8 @@
     <Button
         android:id="@+id/btEighthGen"
         android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gen8"
+        android:layout_height="50dp"
+        android:background="@drawable/g8"
         android:fontFamily="@font/roboto_mono"
         android:text="VIII"
         android:textColor="#FFFFFF"
@@ -113,11 +113,13 @@
         app:layout_constraintStart_toStartOf="@+id/btFifthGen"
         app:layout_constraintTop_toTopOf="@+id/btSeventhGen" />
 
-    <Button
+    <ImageView
         android:id="@+id/btPokedex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="POKEDEX"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="@+id/btSixthGen"
-        app:layout_constraintTop_toTopOf="@+id/btEighthGen" />
+        app:layout_constraintTop_toTopOf="@+id/btEighthGen"
+        app:srcCompat="@drawable/pokedeximage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

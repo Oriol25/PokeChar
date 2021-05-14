@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.Trivial"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".ui.BolsaData"
             android:screenOrientation="landscape" />
         <activity
