@@ -29,15 +29,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemClickListener{
-    private int limit;
-    private int offset;
-
     private BolsaBasic[] bolsaBasics;
-
     private String urlJSON;
-
     private String TAG = "PokeChar/Bolsa";
-
     private View vSplash;
     private ProgressBar pbSplash;
 
@@ -47,13 +41,10 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
         setContentView(R.layout.activity_bolsa);
 
         Bundle bundle = getIntent().getExtras();
-        limit = bundle.getInt("limit");
-        offset = bundle.getInt("offset");
+        urlJSON = bundle.getString("item");
 
         vSplash = findViewById(R.id.vSplashBolsa);
         pbSplash = findViewById(R.id.pbSplashBolsa);
-
-        urlJSON = BolsaApi.bolsa + "limit=" + limit + "&offset=" + offset;
 
         cargarJSON();
 

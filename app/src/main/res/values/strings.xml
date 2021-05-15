@@ -6,16 +6,31 @@
     <string name="bagMenu">Bag</string>
     <string name="optionsMenu">Options</string>
     <string name="trivialMenu">Trivial</string>
-    <string name="pokeball">PokeBall</string>
-    <string name="botiquin">first aid kit</string>
-    <string name="remedioscura">Healing remedies</string>
-    <string name="Objetospoten">Power-up items</string>
-    <string name="Spraypoten">Enhancer spray</string>
-    <string name="ataques">TM I HM</string>
-    <string name="IT">Item</string>
-    <string name="nomI">Name:</string>
-    <string name="desI">Description:</string>
 
+    <!-- Pokedex Menu -->
+    <string name="i" translatable="false">I</string>
+    <string name="ii" translatable="false">II</string>
+    <string name="iii" translatable="false">III</string>
+    <string name="iv" translatable="false">IV</string>
+    <string name="v" translatable="false">V</string>
+    <string name="vi" translatable="false">VI</string>
+    <string name="vii" translatable="false">VII</string>
+    <string name="viii" translatable="false">VIII</string>
+
+    <!-- Pokedex Data -->
+    <string name="hp">HP:</string>
+    <string name="attack">Attack:</string>
+    <string name="defense">Defense:</string>
+    <string name="speed">Speed:</string>
+    <string name="spAtt">Sp Attack:</string>
+    <string name="spDef">Sp Defense:</string>
+
+    <!-- Bolsa Data -->
+    <string name="errorString">This screen has not been translated yet</string>
+
+    <!-- Trivial -->
+    <string name="title">Who\'s that pokemon</string>
+    <string name="next">Next</string>
     <string name="score">Score:</string>
 
 </resources>

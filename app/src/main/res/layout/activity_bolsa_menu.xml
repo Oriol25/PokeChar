@@ -16,7 +16,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/pokeball"
-        android:text="@string/pokeball"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +27,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/revivir"
-        android:text="@string/remedioscura"
         app:layout_constraintBottom_toBottomOf="@+id/btBotiquin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btBotiquin"
@@ -41,7 +39,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/pocion"
-        android:text="@string/botiquin"
         app:layout_constraintBottom_toBottomOf="@+id/btPokeball"
         app:layout_constraintEnd_toStartOf="@+id/btremedios"
         app:layout_constraintHorizontal_bias="0.476"
@@ -57,7 +54,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/antidote"
-        android:text="@string/Spraypoten"
         app:layout_constraintStart_toStartOf="@+id/btPokeball"
         app:layout_constraintTop_toBottomOf="@+id/btPokeball" />
 
@@ -68,7 +64,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/speed"
-        android:text="@string/Objetospoten"
         app:layout_constraintStart_toStartOf="@+id/btremedios"
         app:layout_constraintTop_toTopOf="@+id/btattack" />
 
@@ -79,7 +74,6 @@
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@drawable/disco"
-        android:text="@string/ataques"
         app:layout_constraintStart_toStartOf="@+id/btBotiquin"
         app:layout_constraintTop_toTopOf="@+id/btspray" />
 </androidx.constraintlayout.widget.ConstraintLayout>
