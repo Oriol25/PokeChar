@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/menubackpack" />
 
     <ImageButton
-        android:id="@+id/ibOptions"
+        android:id="@+id/ibTrivial"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="36dp"
@@ -41,17 +41,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151"
-        app:srcCompat="@drawable/menuoptions" />
-
-    <ImageButton
-        android:id="@+id/ibTrivial"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="@+id/ibOptions"
-        app:layout_constraintTop_toTopOf="@+id/ibBag"
         app:srcCompat="@drawable/menutrivial" />
 
     <TextView
@@ -83,19 +72,6 @@
         app:layout_constraintTop_toBottomOf="@+id/ibBag" />
 
     <TextView
-        android:id="@+id/tvOptions"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/bangers"
-        android:text="@string/optionsMenu"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ibOptions"
-        app:layout_constraintStart_toStartOf="@+id/ibOptions"
-        app:layout_constraintTop_toBottomOf="@+id/ibOptions" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -106,7 +82,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/ibTrivial"
         app:layout_constraintStart_toStartOf="@+id/ibTrivial"
-        app:layout_constraintTop_toTopOf="@+id/tvBag" />
+        app:layout_constraintTop_toBottomOf="@+id/ibTrivial" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
