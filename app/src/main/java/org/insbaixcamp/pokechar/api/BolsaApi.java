@@ -21,6 +21,9 @@ public class BolsaApi {
     public static int offsetAttack = 304;
     public static int limitAttack = 100;
 
+    public static String tmSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/tm-normal.png";
+    public static String hmSprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hm-normal.png";
+
     public static String sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/";
 
 

@@ -88,8 +88,9 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 name = jsonArray.getJSONObject(i).getString("name");
                                 urlD = jsonArray.getJSONObject(i).getString("url");
-                                urlFoto = posBolsa(jsonArray.getJSONObject(i).getString("name"));
+                                urlFoto = posBolsa(name, jsonArray.getJSONObject(i).getString("name"));
                                 bolsaBasics[i] = new BolsaBasic(i, name, urlD, urlFoto);
+
                             }
 
                             cargarBolsa();
@@ -113,10 +114,17 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
     }
 
-    public String posBolsa(String name) {
-        name = BolsaApi.sprite + name + ".png";
+    public String posBolsa(String name, String url) {
+        if (name.startsWith("tm")) {
+            url = BolsaApi.tmSprite;
+        } else if (name.startsWith("hm")) {
+            url = BolsaApi.hmSprite;
+        } else {
+            url = BolsaApi.sprite + url + ".png";
+        }
 
-        return name;
+
+        return url;
     }
 
     public void cargarBolsa() {
