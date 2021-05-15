@@ -143,27 +143,23 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                                 name = jsonObject.getJSONObject("stat").getString("name");
 
                                 if (name.equals("hp")) {
-                                    tvHP.setText(String.valueOf(stat));
+                                    tvHP.setText(" " + stat);
                                 } else if (name.equals("attack")) {
-                                    tvAtt.setText(String.valueOf(stat));
+                                    tvAtt.setText(" " + stat);
                                 } else if (name.equals("defense")) {
-                                    tvDef.setText(String.valueOf(stat));
+                                    tvDef.setText(" " + stat);
                                 } else if (name.equals("special-attack")) {
-                                    tvSpAtt.setText(String.valueOf(stat));
+                                    tvSpAtt.setText(" " + stat);
                                 } else if (name.equals("special-defense")) {
-                                    tvSpDef.setText(String.valueOf(stat));
+                                    tvSpDef.setText(" " + stat);
                                 } else if (name.equals("speed")) {
-                                    tvSpeed.setText(String.valueOf(stat));
+                                    tvSpeed.setText(" " + stat);
                                 }
 
                             }
 
                             urlTypeP = response.getJSONArray("types").getJSONObject(0).getJSONObject("type").getString("url");
                             cargarTypeP(urlTypeP);
-
-                            if (urlTypeP.equals("")) {
-
-                            }
 
                             if (response.getJSONArray("types").length() == 2) {
                                 urlTypeS = response.getJSONArray("types").getJSONObject(1).getJSONObject("type").getString("url");
