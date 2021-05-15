@@ -71,7 +71,6 @@ public class BolsaData extends AppCompatActivity {
                                     .getJSONObject(0).getString("text");
                             category = response.getJSONObject("category").getString("name");
 
-                            //des = des.toUpperCase().charAt(0) + des.substring(1).toLowerCase();
                             name = name.toUpperCase().charAt(0) + name.substring(1).toLowerCase();
                             category = category.toUpperCase().charAt(0) + category.substring(1).toLowerCase();
                             tvnomI.setText(name);

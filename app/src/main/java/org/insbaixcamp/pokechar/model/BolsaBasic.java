@@ -9,6 +9,7 @@ public class BolsaBasic {
     public BolsaBasic(int id, String name, String urldData, String urlImage) {
         this.id = id;
         this.name = name;
+        this.urlData = urldData;
         this.urlImage = urlImage;
     }
 

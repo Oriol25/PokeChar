@@ -31,7 +31,6 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
     private int offset;
 
     private BolsaBasic[] bolsaBasics;
-    private String urlFoto;
 
     private String urlJSON;
 
@@ -49,7 +48,6 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
         urlJSON = BolsaApi.bolsa + "limit=" + limit + "&offset=" + offset;
 
         cargarJSON();
-
 
     }
 
@@ -72,6 +70,7 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
                         String name;
                         String urlD;
+                        String urlFoto;
 
                         try {
                             jsonArray = response.getJSONArray("results");
@@ -83,7 +82,6 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
                                 urlD = jsonArray.getJSONObject(i).getString("url");
                                 urlFoto = posBolsa(jsonArray.getJSONObject(i).getString("name"));
                                 bolsaBasics[i] = new BolsaBasic(i, name, urlD, urlFoto);
-
                             }
 
                             cargarBolsa();
@@ -108,7 +106,6 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
     }
 
     public String posBolsa(String name) {
-
         name = BolsaApi.sprite + name + ".png";
 
         return name;
@@ -125,10 +122,8 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-            Intent i = new Intent(this, BolsaData.class);
-            i.putExtra("urlData", bolsaBasics[clickedItemIndex].getUrlData());
-            startActivity(i);
-
+        Intent i = new Intent(this, BolsaData.class);
+        i.putExtra("urlData", bolsaBasics[clickedItemIndex].getUrlData());
+        startActivity(i);
     }
-
 }
