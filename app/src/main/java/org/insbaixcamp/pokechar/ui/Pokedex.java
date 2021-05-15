@@ -26,10 +26,8 @@ import org.json.JSONObject;
 public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListItemClickListener {
 
     private String urlJSON;
-
     private PokedexBasic[] pokedexBasics;
     private String urlFoto;
-
     private String TAG = "PokeChar/Pokedex";
 
     @Override
@@ -41,8 +39,6 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
         urlJSON = bundle.getString("pokedex");
 
         cargarJSON();
-
-
 
     }
 
@@ -94,7 +90,6 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
     public String posPokemon (String str) {
         str = str.replace(PokeApi.pokedex, "");
         str = str.replace("/", ".png");
-
         str = PokeApi.spriteFront + str;
 
         return str;
@@ -110,8 +105,6 @@ public class Pokedex extends AppCompatActivity implements PokedexAdapter.ListIte
         rvPokedex.setHasFixedSize(true);
         PokedexAdapter pokedexAdapter = new PokedexAdapter(pokedexBasics, this);
         rvPokedex.setAdapter(pokedexAdapter);
-
-
 
     }
 

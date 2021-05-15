@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -26,6 +27,8 @@ public class BolsaData extends AppCompatActivity {
     private TextView tvnomI;
     private TextView tvDesI;
     private TextView tvCategoryI;
+    private View vSplash;
+    private ProgressBar pbSplash;
 
     private String urlItem;
 
@@ -44,6 +47,8 @@ public class BolsaData extends AppCompatActivity {
         tvnomI = findViewById(R.id.tvnomI);
         tvDesI = findViewById(R.id.tvDesI);
         tvCategoryI = findViewById(R.id.tvCategoryI);
+        vSplash = findViewById(R.id.vSplashBolsaData);
+        pbSplash = findViewById(R.id.pbSplashBolsaData);
 
         cargarItem();
     }
@@ -77,14 +82,14 @@ public class BolsaData extends AppCompatActivity {
                             tvDesI.setText(des);
                             tvCategoryI.setText(category);
 
-
                             Picasso.get().load(url).into(imagenI);
-
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+                        pbSplash.setVisibility(View.GONE);
+                        vSplash.setVisibility(View.GONE);
 
                     }
                 },

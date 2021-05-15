@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,6 +38,9 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
     private String TAG = "PokeChar/Bolsa";
 
+    private View vSplash;
+    private ProgressBar pbSplash;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,9 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
         Bundle bundle = getIntent().getExtras();
         limit = bundle.getInt("limit");
         offset = bundle.getInt("offset");
+
+        vSplash = findViewById(R.id.vSplashBolsa);
+        pbSplash = findViewById(R.id.pbSplashBolsa);
 
         urlJSON = BolsaApi.bolsa + "limit=" + limit + "&offset=" + offset;
 
@@ -118,6 +126,10 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
         rvBolsa.setHasFixedSize(true);
         BolsaAdapter bolsaAdapter = new BolsaAdapter(bolsaBasics,  this);
         rvBolsa.setAdapter(bolsaAdapter);
+
+        pbSplash.setVisibility(View.GONE);
+        vSplash.setVisibility(View.GONE);
+
     }
 
     @Override

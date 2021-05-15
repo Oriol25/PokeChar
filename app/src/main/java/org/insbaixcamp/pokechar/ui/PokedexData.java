@@ -23,7 +23,6 @@ import org.insbaixcamp.pokechar.R;
 import org.insbaixcamp.pokechar.api.PokeApi;
 import org.insbaixcamp.pokechar.api.TypeApi;
 import org.insbaixcamp.pokechar.conf.Language;
-import org.insbaixcamp.pokechar.model.PokedexBasic;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,8 +59,8 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     private ImageView ibEvolutionDos;
     private ImageView ibEvolutionTres;
 
-    private View splash;
-    private ProgressBar progressBar;
+    private View vSplash;
+    private ProgressBar pbSplash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +91,8 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
         ibEvolutionDos = findViewById(R.id.ibEvolution2);
         ibEvolutionTres = findViewById(R.id.ibEvolution3);
 
-        splash = findViewById(R.id.splashScreen);
-        progressBar = findViewById(R.id.progresBar);
+        vSplash = findViewById(R.id.vSplashPokedexData);
+        pbSplash = findViewById(R.id.pbSplashPokedexData);
 
         ibEvolution.setOnClickListener(this);
         ibEvolutionDos.setOnClickListener(this);
@@ -377,8 +376,8 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                             tvTypeP.setBackgroundColor(Color.parseColor(TypeApi.fairyColor));
                         }
 
-                        splash.setVisibility(View.GONE);
-                        progressBar.setVisibility(View.GONE);
+                        vSplash.setVisibility(View.GONE);
+                        pbSplash.setVisibility(View.GONE);
 
                     }
                 },
@@ -489,14 +488,12 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
     public String posPokemonSpecies(String str) {
         str = str.replace(PokeApi.pokedexSpecies, "");
         str = str.replace("/", ".png");
-
         str = PokeApi.spriteFront + str;
 
         return str;
     }
 
     public String posPokemonSpeciesToPokemon(String str) {
-
         str = str.replace("-species", "");
 
         return str;
