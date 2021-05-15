@@ -46,23 +46,17 @@ public class BolsaMenu extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         Intent i = new Intent(this, Bolsa.class);
         if (v.getId() == btPokeball.getId()) {
-            i.putExtra("offset", BolsaApi.offsetPokeball);
-            i.putExtra("limit", BolsaApi.limitPokeball);
+            i.putExtra("item", BolsaApi.pokeBall);
         } else if (v.getId() == btBotiquin.getId()) {
-            i.putExtra("offset", BolsaApi.offsetBotiquin);
-            i.putExtra("limit", BolsaApi.limitBotiquin);
+            i.putExtra("item", BolsaApi.botiquin);
         } else if (v.getId() == btremedios.getId()) {
-            i.putExtra("offset", BolsaApi.offsetRemedios);
-            i.putExtra("limit", BolsaApi.limitRemedios);
+            i.putExtra("item", BolsaApi.remedios);
         } else if (v.getId() == btspray.getId()) {
-            i.putExtra("offset", BolsaApi.offsetSpray);
-            i.putExtra("limit", BolsaApi.limitSpray);
+            i.putExtra("item", BolsaApi.sprayPotenciador);
         } else if (v.getId() == btattack.getId()) {
-            i.putExtra("offset", BolsaApi.offsetAttack);
-            i.putExtra("limit", BolsaApi.limitAttack);
+            i.putExtra("item", BolsaApi.tmHm);
         } else if (v.getId() == btitems.getId()) {
-            i.putExtra("offset", BolsaApi.offsetObjetos);
-            i.putExtra("limit", BolsaApi.limitObjetos);
+            i.putExtra("item", BolsaApi.objetoPotenciador);
         }
         startActivity(i);
     }
