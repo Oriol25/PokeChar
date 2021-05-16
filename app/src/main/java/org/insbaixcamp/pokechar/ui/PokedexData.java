@@ -271,7 +271,9 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                                 urlSecondEvolution = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
                                 Picasso.get().load(posPokemonSpecies(urlSecondEvolution)).into(ibEvolutionDos);
                                 if (jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONArray("evolves_to").length() != 0) {
-                                    urlThirdEvolution = jsonObject.getJSONArray("evolves_to").getJSONObject(0).getJSONArray("evolves_to").getJSONObject(0).getJSONObject("species").getString("url");
+                                    urlThirdEvolution = jsonObject.getJSONArray("evolves_to")
+                                            .getJSONObject(0).getJSONArray("evolves_to")
+                                            .getJSONObject(0).getJSONObject("species").getString("url");
                                     Picasso.get().load(posPokemonSpecies(urlThirdEvolution)).into(ibEvolutionTres);
                                 } else {
                                     ibEvolutionTres.setVisibility(View.GONE);
@@ -415,7 +417,6 @@ public class PokedexData extends AppCompatActivity implements View.OnClickListen
                                 }
 
                             }
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -15,9 +15,6 @@ public class PokeApi {
     public static String pokedexVIII = "https://pokeapi.co/api/v2/pokemon?limit=84&offset=814";
     public static String pokedexAll = "https://pokeapi.co/api/v2/pokemon?limit=893&offset=0";
 
-
-
     public static String spriteFront = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-
 
 }

@@ -45,4 +45,5 @@ public class PokedexBasic {
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
+
 }

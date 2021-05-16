@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ibBag" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvTrivial"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
