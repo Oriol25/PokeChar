@@ -52,11 +52,8 @@ public class Bolsa extends AppCompatActivity implements BolsaAdapter.ListItemCli
 
     public void cargarJSON() {
 
-
-        // Initialize a new RequestQueue instance
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        // Initialize a new JsonObjectRequest instance
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 urlJSON,

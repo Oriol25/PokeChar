@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PokeChar</string>
+    <string name="app_name" translatable="false">PokeChar</string>
 
     <!-- Main Activity -->
     <string name="pokedexMenu">Pokedex</string>

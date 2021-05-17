@@ -164,9 +164,6 @@ public class Trivial extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
-        boolean boolControl = false;
-
             if (v.getId() == btop1.getId()) {
                 if (btop1.getText() == pokemon[0].getName()) {
                     btop1.setBackgroundResource(quizcorrect);
