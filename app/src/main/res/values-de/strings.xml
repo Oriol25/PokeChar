@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Activity -->
+    <string name="pokedexMenu">Pokedex</string>
+    <string name="bagMenu">Tasche</string>
+    <string name="optionsMenu">Optionen</string>
+    <string name="trivialMenu">Trivial</string>
+
+    <!-- Pokedex Data -->
+    <string name="hp">HP:</string>
+    <string name="attack">Attacke:</string>
+    <string name="defense">Verteidigung:</string>
+    <string name="speed">Geschwindigkeit:</string>
+    <string name="spAtt">Sp Attacke:</string>
+    <string name="spDef">Sp Verteidigung:</string>
+
+    <!-- Bolsa Data -->
+    <string name="errorString">Dieser Bildschirm wurde noch nicht übersetzt</string>
+
+    <!-- Trivial -->
+    <string name="title">Wer ist das Pokemon?</string>
+    <string name="next">Nächster</string>
+    <string name="score">Ergebnis:</string>
+
+</resources>
